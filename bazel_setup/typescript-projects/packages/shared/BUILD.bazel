@@ -1,0 +1,25 @@
+load("@aspect_rules_ts//ts:defs.bzl", "ts_project")
+load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+
+ts_project(
+    name = "shared_ts",
+    srcs = ["src/main.ts"],
+    tsconfig = "//typescript-projects:tsconfig",
+    declaration = True,
+    resolve_json_module = True,
+    deps = [
+        "//typescript-projects:node_modules/@types/node",
+    ],
+)
+
+# make this library available via node_modules
+npm_package(
+    name = "shared",
+    srcs = [
+        "package.json",
+        "src/main.js",
+    ],
+    # This is a perf improvement; the default will be flipped to False in rules_js 2.0
+    include_runfiles = False,
+    visibility = ["//visibility:public"],
+)
