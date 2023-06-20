@@ -3,7 +3,7 @@ import React from 'react';
 import { Tabs as MuiTabs, Tab as MuiTab, useTheme, Box } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
-import * as API from '../context/tabs/TabsAPI';
+import type * as API from '../context/tabs/TabsAPI';
 import { useTabs } from '../context/tabs/TabsContext';
 
 

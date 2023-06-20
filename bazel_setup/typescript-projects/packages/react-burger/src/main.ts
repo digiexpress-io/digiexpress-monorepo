@@ -1,20 +1,27 @@
+// https://github.com/microsoft/TypeScript/issues/47663
+import type {} from '@emotion/styled';
+import type {} from '@emotion/react';
+import type {} from '@mui/system';
+import type {} from '@mui/types';
+
+
 import { AppProviderProps, useApps as useAppsAlias, AppProvider } from './context/AppContext';
 import { useDrawer as useDrawerAlias } from './context/drawer/DrawerContext';
 import { useTabs as useTabsAlias } from './context/tabs/TabsContext';
 import { useSecondary as useSecondaryAlias } from './context/secondary/SecondaryContext';
 import { siteTheme } from './theme/siteTheme';
 
-import {
+import type {
   AppContextType, AppSession, AppActions, 
   App, AppId, AppState, AppStateCreate, AppStateRestore
 } from './context/AppAPI';
-import {
+import type {
   DrawerContextType, DrawerSession, DrawerActions
 } from './context/drawer/DrawerAPI';
-import {
+import type {
   TabsContextType, TabsSession, TabSession, TabsHistory, TabsActions
 } from './context/tabs/TabsAPI';
-import {
+import type {
   SecondaryContextType, SecondarySession, SecondaryActions 
 } from './context/secondary/SecondaryAPI';
 

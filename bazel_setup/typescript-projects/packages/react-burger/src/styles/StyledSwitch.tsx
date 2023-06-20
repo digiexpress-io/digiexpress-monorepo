@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { alpha, styled } from '@mui/material/styles';
 import { Switch, FormControlLabel, FormHelperText } from '@mui/material';
 import { FormattedMessage } from 'react-intl';

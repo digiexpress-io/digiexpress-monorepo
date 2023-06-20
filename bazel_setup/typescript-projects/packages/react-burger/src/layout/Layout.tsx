@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { CssBaseline, Toolbar, Typography, Box } from '@mui/material';
-import { SxProps } from '@mui/system';
-import { styled } from "@mui/material/styles";
+import { CssBaseline, Toolbar, Typography, Box, SxProps, styled } from '@mui/material';
 
 import StyledAppBar from './Appbar';
 import StyledDrawer from './Drawer';

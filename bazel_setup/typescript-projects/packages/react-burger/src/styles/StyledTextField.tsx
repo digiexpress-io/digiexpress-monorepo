@@ -1,8 +1,7 @@
-import React from 'react';
-import { TextField, TextFieldProps, FormControl, FormControlProps, InputLabel, Input, InputProps, Box, FormHelperText, InputAdornment } from '@mui/material';
+import type React from 'react';
+import { styled, TextField, TextFieldProps, FormControl, FormControlProps, InputLabel, Input, InputProps, Box, FormHelperText, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
-import { styled } from "@mui/material/styles";
 import { FormattedMessage } from 'react-intl';
 
 
@@ -53,7 +52,7 @@ interface StyledTextFieldProps<T> {
   onEnter?: () => void;
 }
 
-const StyledFileField: React.FC<StyledTextFieldProps<string>> = ({ onChange, label, value, required, placeholder, helperText, disabled }) => {
+const StyledFileField: React.FC<StyledTextFieldProps<string>> = ({ onChange, label, helperText, disabled }) => {
   const title = <FormattedMessage id={label} />;
   return (
     <Box sx={{ mt: 2 }}>

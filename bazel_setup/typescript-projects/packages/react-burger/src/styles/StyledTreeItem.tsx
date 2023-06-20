@@ -1,8 +1,8 @@
-import * as React from "react";
+import type React from "react";
 import { styled } from "@mui/material/styles";
 import { Typography, Box, useTheme} from "@mui/material";
 import TreeItem, { TreeItemProps, treeItemClasses } from "@mui/lab/TreeItem";
-import { SvgIconProps } from "@mui/material/SvgIcon";
+import type { SvgIconProps } from "@mui/material/SvgIcon";
 
 
 const StyledTreeItemRoot = styled(TreeItem)(({ theme }) => ({
@@ -67,7 +67,7 @@ const StyledTreeItem: React.FC<StyledTreeItemProps> = (props) => {
   if(labelcolor) {
     resolvedLabelcolor = theme.palette[labelcolor]?.main;
     if(!resolvedLabelcolor && labelcolor.indexOf(".") > -1) {
-      const coolors = labelcolor.split(".");
+      const coolors = labelcolor.split(".") as [string, string];
       resolvedLabelcolor = theme.palette[coolors[0]][coolors[1]];
     }
   }
@@ -77,11 +77,11 @@ const StyledTreeItem: React.FC<StyledTreeItemProps> = (props) => {
       sx={{ backgroundColor: "explorer.main" }}
       label={
         <Box sx={{ display: "flex", alignItems: "center", p: 0.5, pr: 0 }}>
-          {labelButton ? labelButton : <Box component={LabelIcon}
+          {labelButton ? labelButton : (LabelIcon && <Box component={LabelIcon}
             sx={{
               mr: 1,
               color: resolvedLabelcolor,
-            }} />}
+            }} />)}
           <Typography noWrap={true} maxWidth="300px"
             variant="body2"
             sx={{ flexGrow: 1 }}
@@ -113,7 +113,7 @@ const StyledTreeItemOption: React.FC<{
   onClick: () => void
 }> = (props) => {
   const theme = useTheme();
-
+  const icon = props.icon;
   return (
     <StyledTreeItemRoot
       onClick={props.onClick}
@@ -121,7 +121,7 @@ const StyledTreeItemOption: React.FC<{
 
       label={
         <Box sx={{ display: "flex", alignItems: "center", p: 0.2, pr: 0}} >
-          <Box component={props.icon}  color={theme.palette[props.color].main} sx={{ pl: 1, mr: 1}} />
+          {icon && (<Box component={icon} color={theme.palette[props.color].main} sx={{ pl: 1, mr: 1}} />)}
           <Typography 
             variant="body2"
             sx={{ fontWeight: "inherit", flexGrow: 1 }}

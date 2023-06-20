@@ -1,4 +1,4 @@
-import React from 'react';
+import type React from 'react';
 import { styled } from "@mui/material/styles";
 import { Dialog, DialogTitle, DialogContent, DialogActions, Box, alpha, useTheme } from '@mui/material';
 import { FormattedMessage } from 'react-intl';
@@ -37,7 +37,7 @@ interface StyledDialogProps {
 
 const StyledDialog: React.FC<StyledDialogProps> = (props) => {
   const theme = useTheme();
-  const colors = props.backgroundColor.split(".")
+  const colors = props.backgroundColor.split(".") as [string, string];
   const color = theme.palette[colors[0]][colors[1]];
 
 
