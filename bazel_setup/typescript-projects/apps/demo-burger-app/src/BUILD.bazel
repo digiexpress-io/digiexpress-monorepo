@@ -10,6 +10,8 @@ ASSET_PATTERNS = [
 ]
 
 SRC_PATTERNS = [
+    "*.tsx",
+    "*.ts",
     "test_app/**/*.tsx",
     "test_app/**/*.ts",
 ]

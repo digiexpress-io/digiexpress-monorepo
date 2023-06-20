@@ -1,5 +1,7 @@
 import React from 'react';
 import Burger from "@digiexpress/react-burger";
+import Toolbar from './Toolbar';
+
 
 const DemoBurger: React.FC<{}> = () => {
   const [app1State] = React.useState<App1ContextType>({});
@@ -57,7 +59,7 @@ const Secondary1: React.FC<{}> = () => {
   return (<div>secondary app1</div>);
 }
 const Toolbar1: React.FC<{}> = () => {
-  return (<div>toolbar app1</div>);
+  return (<Toolbar>#1</Toolbar>);
 }
 
 const Primary2: React.FC<{}> = () => {
@@ -70,7 +72,7 @@ const Secondary2: React.FC<{}> = () => {
   return (<div>secondary app2</div>);
 }
 const Toolbar2: React.FC<{}> = () => {
-  return (<div>toolbar app2</div>);
+  return (<Toolbar>#2</Toolbar>);
 }
 
 
