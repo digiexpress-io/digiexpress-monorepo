@@ -1,5 +1,7 @@
 load("@aspect_rules_ts//ts:defs.bzl", "ts_project")
 load("@aspect_rules_js//npm:defs.bzl", "npm_package")
+load("//typescript-projects/tools:ts_deps.bzl", "MUI_DEPS")
+
 
 SRC_PATTERNS = [
     "src/**/*.tsx",
@@ -13,27 +15,12 @@ ts_project(
     tsconfig="//typescript-projects:tsconfig",
     declaration=True,
     resolve_json_module=True,
-    deps=[
-        "//typescript-projects:node_modules/@types/node",
-        "//typescript-projects:node_modules/@types/react",
-        "//typescript-projects:node_modules/@mui/icons-material",
-        "//typescript-projects:node_modules/@mui/lab",
-        "//typescript-projects:node_modules/@mui/material",
-        "//typescript-projects:node_modules/@mui/styled-engine",
-        "//typescript-projects:node_modules/@mui/system",
-        "//typescript-projects:node_modules/@mui/types",
-        "//typescript-projects:node_modules/moment",
-        "//typescript-projects:node_modules/react",
-        "//typescript-projects:node_modules/react-dom",
-        "//typescript-projects:node_modules/react-intl",
-        "//typescript-projects:node_modules/@emotion/react",
-        "//typescript-projects:node_modules/@emotion/styled",
-    ]
+    deps=MUI_DEPS
 )
 
 # make this library available via node_modules
 npm_package(
-    name="react_burger",
+    name="react-burger",
     srcs=[
         "package.json",
         ":react_burger_ts",

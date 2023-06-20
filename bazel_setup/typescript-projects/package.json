@@ -14,9 +14,9 @@
     "typescript": "4.9.3"
   },
   "dependencies": {
+    "@digiexpress/react-burger": "workspace:*",
     "@digiexpress/first": "workspace:*",
     "@digiexpress/one": "workspace:*",
-    "@digiexpress/react-burger": "workspace:*",
     "@digiexpress/shared": "workspace:*",
     "@digiexpress/two": "workspace:*",
     "@mui/icons-material": "^5.11.6",
@@ -37,7 +37,8 @@
     "web-vitals": "3.1.0"
   },
   "scripts": {
-    "start": "ibazel run //typescript-projects/apps/react-cra-example:start"
+    "start": "ibazel run //typescript-projects/apps/react-cra-example:start",
+    "start-burger-app": "ibazel run //typescript-projects/apps/demo-burger-app:start"
   },
   "pnpm": {
     "packageExtensions": {

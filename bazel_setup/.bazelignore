@@ -1,6 +1,7 @@
 node_modules
 typescript-projects/node_modules
 typescript-projects/apps/react-cra-example/node_modules
+typescript-projects/apps/demo-burger-app/node_modules
 typescript-projects/packages/first/node_modules
 typescript-projects/packages/one/node_modules
 typescript-projects/packages/shared/node_modules
